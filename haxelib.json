@@ -1,0 +1,14 @@
+{
+    "name": "om.tfjs",
+    "version": "0.0.0",
+    "description": "Tensorflow.js tools",
+    "tags": ["om","tensorflow"],
+    "url": "https://github.com/omlib/om.tfjs",
+    "license": "Public",
+    "contributors": ["tong"],
+    "releasenote": "See CHANGELOG.md",
+    "classPath": "src/",
+    "dependencies": {
+        "om.core": ""
+    }
+}
