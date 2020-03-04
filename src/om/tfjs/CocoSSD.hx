@@ -7,15 +7,19 @@ import js.html.ImageData;
 import js.html.ImageElement;
 import js.html.VideoElement;
 
-enum abstract MobileNetAlpha(Float) to Float {
-	var _025 = 0.25;
-	var _050 = 0.50;
-	var _075 = 0.75;
-	var _1 = 1.0;
+/**
+	Defaults to 'lite_mobilenet_v2'.
+	lite_mobilenet_v2 is smallest in size, and fastest in inference speed.
+	mobilenet_v2 has the highest classification accuracy.
+**/
+enum abstract Base(String) to String {
+	var mobilenet_v1;
+	var mobilenet_v2;
+	var lite_mobilenet_v2;
 }
 
 typedef ModelConfig = {
-	var ?base : Dynamic;
+	var ?base : Base;
 	var ?modelUrl : String;
 }
 
