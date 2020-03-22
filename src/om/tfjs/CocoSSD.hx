@@ -18,7 +18,7 @@ enum abstract Base(String) to String {
 	var lite_mobilenet_v2;
 }
 
-typedef ModelConfig = {
+private typedef ModelConfig = {
 	var ?base : Base;
 	var ?modelUrl : String;
 }

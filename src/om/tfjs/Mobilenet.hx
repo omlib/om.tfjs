@@ -14,7 +14,7 @@ enum abstract MobileNetAlpha(Float) to Float {
 	var _1 = 1.0;
 }
 
-typedef ModelConfig = {
+private typedef ModelConfig = {
 	var version : String;
 	var ?alpha : MobileNetAlpha;
 	var ?modelUrl : String;
