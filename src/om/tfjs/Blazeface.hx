@@ -9,7 +9,7 @@ import js.html.VideoElement;
 
 private typedef ModelConfig = Dynamic;
 
-typedef Prediction = {
+private typedef Prediction = {
 	var topLeft : Array<Int>;
 	var bottomRight : Array<Int>;
 	var ?landmarks : Array<Int>;

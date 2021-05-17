@@ -30,7 +30,7 @@ typedef BBox = {
 	var height : Float;
 }
 
-typedef Result = {
+private typedef Result = {
 	var bbox : BBox;
 	@:native("class") var class_ : String;
 	var score : Float;
