@@ -44,7 +44,7 @@ private typedef Pose = {
 	var keypoints : Array<Keypoint>;
 }
 
-typedef Result = {
+private typedef Result = {
 	var allPoses : Array<Pose>;
 	var data : Uint8Array;
 	var width : Int;
