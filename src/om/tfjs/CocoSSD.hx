@@ -23,12 +23,7 @@ private typedef ModelConfig = {
 	var ?modelUrl : String;
 }
 
-typedef BBox = {
-	var x : Float;
-	var y : Float;
-	var width : Float;
-	var height : Float;
-}
+typedef BBox = Array<Float>;
 
 private typedef Result = {
 	var bbox : BBox;
@@ -44,5 +39,5 @@ private typedef Result = {
 @:native("cocoSsd")
 extern class CocoSSD {
 	static function load( ?modelConfig : ModelConfig ) : Promise<CocoSSD>;
-	function detect( img : EitherType<ImageData,EitherType<ImageElement,EitherType<CanvasElement,VideoElement>>>, ?maxDetectionSize : Int ) : Promise<Array<Result>>;
+	function detect( img : EitherType<ImageData,EitherType<ImageElement,EitherType<CanvasElement,VideoElement>>>, ?maxNumBoxes : Int, ?minScore : Float ) : Promise<Array<Result>>;
 }
