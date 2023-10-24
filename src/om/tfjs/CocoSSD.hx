@@ -19,25 +19,26 @@ enum abstract Base(String) to String {
 }
 
 private typedef ModelConfig = {
-	var ?base : Base;
-	var ?modelUrl : String;
+	var ?base:Base;
+	var ?modelUrl:String;
 }
 
 typedef BBox = Array<Float>;
 
 private typedef Result = {
-	var bbox : BBox;
-	@:native("class") var class_ : String;
-	var score : Float;
+	var bbox:BBox;
+	@:native("class") var class_:String;
+	var score:Float;
 }
 
 /**
 	Object detection.
-	
+
 	https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd
 **/
 @:native("cocoSsd")
 extern class CocoSSD {
-	static function load( ?modelConfig : ModelConfig ) : Promise<CocoSSD>;
-	function detect( img : EitherType<ImageData,EitherType<ImageElement,EitherType<CanvasElement,VideoElement>>>, ?maxNumBoxes : Int, ?minScore : Float ) : Promise<Array<Result>>;
+	static function load(?modelConfig:ModelConfig):Promise<CocoSSD>;
+	function detect(img:EitherType<ImageData, EitherType<ImageElement, EitherType<CanvasElement, VideoElement>>>, ?maxNumBoxes:Int,
+		?minScore:Float):Promise<Array<Result>>;
 }

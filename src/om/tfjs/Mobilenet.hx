@@ -15,26 +15,26 @@ enum abstract MobileNetAlpha(Float) to Float {
 }
 
 private typedef ModelConfig = {
-	var version : String;
-	var ?alpha : MobileNetAlpha;
-	var ?modelUrl : String;
-	var ?inputRange : Array<Float>;
+	var version:String;
+	var ?alpha:MobileNetAlpha;
+	var ?modelUrl:String;
+	var ?inputRange:Array<Float>;
 }
 
 typedef Prediction = {
-	var className : String;
-	var probability : Float;
+	var className:String;
+	var probability:Float;
 }
 
 /**
 
 	Image recogniton.
-	
+
 	https://github.com/tensorflow/tfjs-models/tree/master/mobilenet
 **/
 @:native("mobilenet")
 extern class Mobilenet {
-	static function load( ?modelConfig : ModelConfig ) : Promise<Mobilenet>;
-	function infer( img : EitherType<ImageData,EitherType<ImageElement,EitherType<CanvasElement,VideoElement>>>, ?embedding : Bool ) : Promise<Array<Prediction>>;
-	function classify( img : EitherType<ImageData,EitherType<ImageElement,EitherType<CanvasElement,VideoElement>>>, ?topk : Int ) : Promise<Array<Prediction>>;
+	static function load(?modelConfig:ModelConfig):Promise<Mobilenet>;
+	function infer(img:EitherType<ImageData, EitherType<ImageElement, EitherType<CanvasElement, VideoElement>>>, ?embedding:Bool):Promise<Array<Prediction>>;
+	function classify(img:EitherType<ImageData, EitherType<ImageElement, EitherType<CanvasElement, VideoElement>>>, ?topk:Int):Promise<Array<Prediction>>;
 }
